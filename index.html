@@ -6,10 +6,10 @@
 <body>
 
 <h1>Combat Dice Roller</h1>
-<p>Select the number of combat dice to roll. You must press <i>Clear</i> before throwing dice.</p>
+<p>Select up to 4 combat dice to roll. You must press <i>Clear</i> before throwing dice.</p>
 
 <form>
-  <input type="number" id="numbercombat" min="1" max="4">
+  <input type="number" id="numbercombat" min="1" max="4" size="5" pattern="\d*">
   <input type="button" value="Clear" onClick="empty()">
   <input type="button" id="throw" value="Throw dice!" onClick="throwdice()" disabled="true">
 </form>
@@ -52,10 +52,10 @@ function empty(){
 <img src="images/monster.jpg" name="combatdice4">
 
 <h1>d6 Roller</h1>
-<p>Select the number of regular d6 to roll. You must press <i>Clear</i> before throwing dice.</p>
+<p>Select up to 2 regular d6 to roll. You must press <i>Clear</i> before throwing dice.</p>
 
 <form>
-  <input type="number" id="numberd6" min="1" max="4">
+  <input type="number" id="numberd6" min="1" max="2" size="5" pattern="\d*">
   <input type="button" value="Clear" onClick="emptyd6()">
   <input type="button" id="throwd6" value="Throw dice!" onClick="throwdiced6()" disabled="true">
 </form>
