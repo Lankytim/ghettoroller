@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>ghettoroller</title>
+</head>
+<body>
+
+<h1>Combat Dice Roller</h1>
+<p>Select the number of combat dice to roll. You must press <i>Clear</i> before throwing dice.</p>
+
+<form>
+  <input type="number" id="numbercombat" min="1" max="4">
+  <input type="button" value="Clear" onClick="empty()">
+  <input type="button" id="throw" value="Throw dice!" onClick="throwdice()" disabled="true">
+</form>
+
+<script>
+function throwdice(){
+  var numdice = document.querySelector('input[id="numbercombat"]').value;
+  numdice++;
+  for (i = 1; i < numdice; i++) {
+  //create a random integer between 1 and 6
+  switch (randomdice=Math.round(Math.random()*5)+1) {
+    //Combat Dice faces are: 1x monster; 2x shields; 3x skulls
+    case 1:
+    document.images["combatdice"+i].src="images/monster.jpg";
+    break;
+    case 2:
+    document.images["combatdice"+i].src="images/shield.jpg";
+    break;
+    case 3:
+    document.images["combatdice"+i].src="images/shield.jpg";
+    break;
+    //other cases
+    default:
+    document.images["combatdice"+i].src="images/skull.jpg";
+  }
+}
+document.getElementById('throw').disabled = true;
+}
+function empty(){
+  for (i = 1; i < 5; i++) {
+  document.images["combatdice"+i].src="";
+}
+  document.getElementById('throw').disabled = false;
+}
+</script>
+
+<img src="images/monster.jpg" name="combatdice1">
+<img src="images/monster.jpg" name="combatdice2">
+<img src="images/monster.jpg" name="combatdice3">
+<img src="images/monster.jpg" name="combatdice4">
+
+<h1>d6 Roller</h1>
+<p>Select the number of regular d6 to roll. You must press <i>Clear</i> before throwing dice.</p>
+
+<form>
+  <input type="number" id="numberd6" min="1" max="4">
+  <input type="button" value="Clear" onClick="emptyd6()">
+  <input type="button" id="throwd6" value="Throw dice!" onClick="throwdiced6()" disabled="true">
+</form>
+
+<script>
+function throwdiced6(){
+  var numdice = document.querySelector('input[id=numberd6]').value;
+  numdice++;
+  for (i = 1; i < numdice; i++) {
+  //create a random integer between 1 and 6
+  switch (randomdice=Math.round(Math.random()*5)+1) {
+    //Combat Dice faces are: 1x monster; 2x shields; 3x skulls
+    case 1:
+    document.images["d6"+i].src="images/d6_1.jpg";
+    break;
+    case 2:
+    document.images["d6"+i].src="images/d6_2.jpg";
+    break;
+    case 3:
+    document.images["d6"+i].src="images/d6_3.jpg";
+    break;
+    case 4:
+    document.images["d6"+i].src="images/d6_4.jpg";
+    break;
+    case 5:
+    document.images["d6"+i].src="images/d6_5.jpg";
+    break;
+    case 6:
+    document.images["d6"+i].src="images/d6_6.jpg";
+    break;
+  }
+}
+document.getElementById('throwd6').disabled = true;
+}
+function emptyd6(){
+  for (i = 1; i < 3; i++) {
+  document.images["d6"+i].src="";
+}
+  document.getElementById('throwd6').disabled = false;
+}
+</script>
+
+<img src="images/d6_1.jpg" name="d61">
+<img src="images/d6_1.jpg" name="d62">
+
+</body>
+</html>
